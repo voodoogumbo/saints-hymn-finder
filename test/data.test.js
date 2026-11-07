@@ -11,6 +11,8 @@ const files = {
   es: 'languages/es/himnos.json',
   fr: 'languages/fr/cantiques.json',
   pt: 'languages/pt/hinos.json',
+  to: 'languages/to/himi.json',
+  sm: 'languages/sm/viiga.json',
 };
 
 for (const lang of languages) {
@@ -80,6 +82,8 @@ test('search ignores case, accents and punctuation', () => {
   assert.ok(search('espiritu de dios', 'es').some((h) => h.number === 2));
   assert.ok(search('tis sweet').length >= 1);
   assert.ok(search('etiez vous la', 'fr').some((h) => h.number === 1206));
+  assert.ok(search('ofa', 'to').some((h) => h.title === 'Ko e ʻOtuá ko e ʻOfa'), 'ignores the ʻokina');
+  assert.ok(search('faaola', 'sm').some((h) => h.number === 73), 'ignores apostrophes inside words');
   assert.deepEqual(search('   '), []);
 });
 
@@ -120,6 +124,10 @@ test('translate', () => {
   assert.equal(translate(59, 'es', 'en'), null);
   assert.equal(translate(136, 'en', 'pt').title, 'Eu Sei Que Vive Meu Senhor');
   assert.equal(translate(152, 'es', 'pt').id, '138');
+  assert.equal(translate(136, 'en', 'to').id, '68');
+  assert.equal(translate(136, 'en', 'sm').title, "Ua Ou Iloa Lo'u Fa'aola");
+  assert.equal(translate(141, 'to', 'es').id, '152', 'Tongan uses the Portuguese page id for Angry Words');
+  assert.equal(translate(1073, 'en', 'to'), null, 'not yet released in Tongan');
 
   const harrison = translate(83, 'en', 'es');
   assert.equal(harrison.id, '39');

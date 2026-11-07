@@ -1,35 +1,34 @@
 # LDS Hymns: Titles and Numbers
 
 [![test](https://github.com/voodoogumbo/lds-hymns-titles-numbers/actions/workflows/test.yml/badge.svg)](https://github.com/voodoogumbo/lds-hymns-titles-numbers/actions/workflows/test.yml)
-[![check for new hymns](https://github.com/voodoogumbo/lds-hymns-titles-numbers/actions/workflows/check-for-new-hymns.yml/badge.svg)](https://github.com/voodoogumbo/lds-hymns-titles-numbers/actions/workflows/check-for-new-hymns.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Every hymn number and title from the hymnbooks of The Church of Jesus Christ of Latter-day Saints, in **English, Spanish, French and Portuguese**, plus a **cross-reference** that tells you what number a hymn is in each language.
+Every hymn number and title from the hymnbooks of The Church of Jesus Christ of Latter-day Saints, in **English, Spanish, French, Portuguese, Tongan and Samoan**, plus a **cross-reference** that tells you what number a hymn is in each language.
 
 Plain JSON you can use from any language, and a tiny zero-dependency JavaScript API.
 
-**🔎 Just need a number? Use the [Hymn Number Finder](https://voodoogumbo.github.io/lds-hymns-titles-numbers/).** Type a number or title and see the hymn in all four languages. Each title links to its official page with lyrics, sheet music and recordings. It works on phones, can be added to the home screen, and keeps working offline.
+**🔎 Just need a number? Use the [Hymn Number Finder](https://voodoogumbo.github.io/lds-hymns-titles-numbers/).** Type a number or title and see the hymn in all six languages. Each title links to its official page with lyrics, sheet music and recordings. It works on phones, can be added to the home screen, and keeps working offline.
 
 <a href="https://voodoogumbo.github.io/lds-hymns-titles-numbers/#redeemer%20lives">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/finder-dark.png">
-    <img src=".github/screenshots/finder-light.png" width="600" alt="The Hymn Number Finder showing a search for &quot;redeemer lives&quot;: hymn 136 is 73 in Spanish, 73 in French and 70 in Portuguese.">
+    <img src=".github/screenshots/finder-light.png" width="600" alt="The Hymn Number Finder showing a search for &quot;redeemer lives&quot;: hymn 136 is 73 in Spanish, 73 in French, 70 in Portuguese, 68 in Tongan and 73 in Samoan.">
   </picture>
 </a>
 
-**Up to date with the July 23, 2026 release of *Hymns—For Home and Church*.** A weekly job checks for new releases.
+**Up to date with Gospel Library as of November 7, 2026**, including *Hymns—For Home and Church* through 1078 and 1212.
 
 ## Why this exists
 
-Hymn numbers are different in every language's hymnbook. The four books share 151 hymns, and only the first three of them have the same number in every language:
+Hymn numbers are different in every language's hymnbook. The six books share 143 hymns, and only the first three of them have the same number in every language:
 
-| Hymn | English | Spanish | French | Portuguese |
-|---|---|---|---|---|
-| We Thank Thee, O God, for a Prophet | 19 | 10 | 10 | 9 |
-| Come, Come, Ye Saints | 30 | 17 | 18 | 20 |
-| How Firm a Foundation | 85 | 40 | 42 | 42 |
-| I Know That My Redeemer Lives | 136 | 73 | 73 | 70 |
-| God Be with You Till We Meet Again | 152 | 89 | 89 | 85 |
+| Hymn | English | Spanish | French | Portuguese | Tongan | Samoan |
+|---|---|---|---|---|---|---|
+| We Thank Thee, O God, for a Prophet | 19 | 10 | 10 | 9 | 10 | 10 |
+| Come, Come, Ye Saints | 30 | 17 | 18 | 20 | 18 | 17 |
+| How Firm a Foundation | 85 | 40 | 42 | 42 | 37 | 45 |
+| I Know That My Redeemer Lives | 136 | 73 | 73 | 70 | 68 | 73 |
+| God Be with You Till We Meet Again | 152 | 89 | 89 | 85 | 82 | 89 |
 
 So if you're printing a bilingual program, leading music in a multilingual ward, or building an app, you need a lookup table. This is that table, built directly from the Church's Gospel Library.
 
@@ -48,6 +47,9 @@ getHymn(136);
 translate(136, 'en', 'es');
 // { id: '73', number: 73, title: 'Yo sé que vive mi Señor' }
 
+translate(136, 'en', 'to');
+// { id: '68', number: 68, title: 'ʻOku Moʻui Hoku Huhuʻí' }
+
 translate(83, 'en', 'es');
 // { id: '39', number: 39, title: 'Jehová, sé nuestro guía', note: 'Different tune (HARRISON).' }
 
@@ -64,21 +66,25 @@ Not using JavaScript? Download the JSON directly. See [Using the data without Ja
 
 | Language | File | Current hymnbook | *Hymns—For Home and Church* | Total |
 |---|---|---|---|---|
-| English (`en`) | [`languages/en/hymns.json`](languages/en/hymns.json) | *Hymns* (1985), 1–341 | 1001–1072, 1201–1210 | 423 |
-| Spanish (`es`) | [`languages/es/himnos.json`](languages/es/himnos.json) | *Himnos*, 1–209 | 1001–1072, 1201–1210 | 291 |
-| French (`fr`) | [`languages/fr/cantiques.json`](languages/fr/cantiques.json) | *Cantiques*, 1–204 | 1001–1072, 1201–1210 | 288 |
-| Portuguese (`pt`) | [`languages/pt/hinos.json`](languages/pt/hinos.json) | *Hinos*, 1–204 | 1001–1072, 1201–1210 | 286 |
+| English (`en`) | [`languages/en/hymns.json`](languages/en/hymns.json) | *Hymns* (1985), 1–341 | 1001–1078, 1201–1212 | 431 |
+| Spanish (`es`) | [`languages/es/himnos.json`](languages/es/himnos.json) | *Himnos*, 1–209 | 1001–1078, 1201–1212 | 299 |
+| French (`fr`) | [`languages/fr/cantiques.json`](languages/fr/cantiques.json) | *Cantiques*, 1–204 | 1001–1078, 1201–1212 | 296 |
+| Portuguese (`pt`) | [`languages/pt/hinos.json`](languages/pt/hinos.json) | *Hinos*, 1–204 | 1001–1078, 1201–1212 | 294 |
+| Tongan (`to`) | [`languages/to/himi.json`](languages/to/himi.json) | *Ngaahi Himi*, 1–204 | 1001–1031, 1201–1206 | 241 |
+| Samoan (`sm`) | [`languages/sm/viiga.json`](languages/sm/viiga.json) | *Viiga*, 1–201 | 1001–1031, 1201–1206 | 238 |
 
 Plus [`crosswalk.json`](crosswalk.json), which lines up all of these across languages.
 
-The other hymnbooks are smaller than the English one. Of the 341 English hymns, 197 are in *Himnos*, 198 in *Cantiques* and 192 in *Hinos*. Each also has hymns the English book doesn't: 12 in Spanish, 12 in Portuguese and 7 in French (not counting French 127b, the Swiss version of "Silent Night").
+The other hymnbooks are smaller than the English one. Of the 341 English hymns, 197 are in *Himnos*, 198 in *Cantiques*, 192 in *Hinos*, 186 in *Ngaahi Himi* and 172 in *Viiga*. Each also has hymns the English book doesn't: 12 in Spanish, 12 in Portuguese, 7 in French (not counting French 127b, the Swiss version of "Silent Night"), 18 in Tongan and 29 in Samoan. Many of the Tongan and Samoan ones are local hymns, such as Tongan 52, a setting of Psalm 23 by M. Māhanga.
+
+Tongan and Samoan have fewer hymns from *Hymns—For Home and Church* so far, because the Church translates each batch into those languages later.
 
 ### How the numbering works
 
-- **Current hymnbooks (1–341, 1–209, 1–204, 1–204).** Each language numbers its own book, so numbers don't match across languages. Use `translate()` or the crosswalk.
+- **Current hymnbooks (1–341, 1–209, 1–204, 1–204, 1–204, 1–201).** Each language numbers its own book, so numbers don't match across languages. Use `translate()` or the crosswalk.
 - **Voice labels.** Hymns arranged for women's or men's voices keep the label from the hymnbook's contents, e.g. "As Sisters in Zion (Women)" or "Nous, sœurs de Sion (voix de femmes)".
 - **Lettered numbers.** *Cantiques* prints two versions each of hymns 127 and 151. They're numbered `127a`/`127b` and `151a`/`151b`, and there is no plain 127 or 151 in French.
-- ***Hymns—For Home and Church* (1001+ and 1201+).** The Church is releasing the new hymnbook digitally in batches (Spanish: *Himnos para el hogar y la Iglesia*; French: *Cantiques pour le foyer et l'église*; Portuguese: *Hinos para o Lar e para a Igreja*). These numbers **are** the same in every language. They start at 1001 and 1201 so the current books can keep their numbers in the meantime.
+- ***Hymns—For Home and Church* (1001+ and 1201+).** The Church is releasing the new hymnbook digitally in batches (Spanish: *Himnos para el hogar y la Iglesia*; French: *Cantiques pour le foyer et l'église*; Portuguese: *Hinos para o Lar e para a Igreja*; Tongan: *Ngaahi Himi maʻá e ʻApí mo e Siasí*; Samoan: *Viiga mo le Aiga ma le Ekalesia*). These numbers **are** the same in every language. They start at 1001 and 1201 so the current books can keep their numbers in the meantime.
 - **What's coming.** The Church expects the complete new hymnbook, about 375 songs, in print and digital in 2027, with *"the same song list and numbering across all languages."* The final numbers haven't been published. Expect 1001+/1201+ to change then, and this dataset will follow.
 
 ## JavaScript API
@@ -87,14 +93,14 @@ The other hymnbooks are smaller than the English one. Of the 341 English hymns, 
 |---|---|
 | `getHymn(id, lang = 'en')` | The hymn with that number (`136` or `'127a'`), or `null` |
 | `list(lang = 'en')` | Every hymn in numeric order |
-| `search(query, lang = 'en')` | Hymns whose title contains `query`, ignoring case, accents and punctuation (`'senor'` finds "Señor") |
+| `search(query, lang = 'en')` | Hymns whose title contains `query`, ignoring case, accents and punctuation (`'senor'` finds "Señor", `'faaola'` finds "Fa'aola") |
 | `translate(id, from, to)` | The same hymn in another language, or `null` if that hymnbook doesn't have it. Includes a `note` when the tune or arrangement differs |
 | `url(id, lang = 'en')` | The hymn's page on churchofjesuschrist.org, with lyrics, sheet music and recordings |
 | `hymns`, `crosswalk`, `languages` | The raw data |
 
 Hymns are returned as `{ id, number, title }`. `id` is the number as printed (`'127a'`). `number` is its numeric part (`127`). TypeScript types are included.
 
-You can also import a single data file: `require('lds-hymns-titles-numbers/es')`, `/en`, `/fr`, `/pt` or `/crosswalk`.
+You can also import a single data file: `require('lds-hymns-titles-numbers/es')`, `/en`, `/fr`, `/pt`, `/to`, `/sm` or `/crosswalk`.
 
 ## Data format
 
@@ -111,7 +117,7 @@ A JSON object mapping each hymn number to its title, in numeric order:
 }
 ```
 
-Titles match the Church's hymnbook contents, with two changes: straight apostrophes (`'`) instead of curly ones, and ordinary spaces where French uses non-breaking spaces before `!` and `?`.
+Titles match the Church's hymnbook contents, with two changes: straight apostrophes (`'`) instead of curly ones, and ordinary spaces where French uses non-breaking spaces before `!` and `?`. Tongan titles keep the ʻokina (`ʻ`). Most Tongan titles from *Hymns—For Home and Church* are in capitals because that's how the Church publishes them.
 
 If you read the files in JavaScript, `Object.keys()` puts whole-number keys before keys like `"127a"`. Use `list()` for the correct order.
 
@@ -120,21 +126,21 @@ If you read the files in JavaScript, `Object.keys()` puts whole-number keys befo
 [`crosswalk.json`](crosswalk.json) has one entry per hymn, with its number in each language, or `null` where that language's hymnbook doesn't include it:
 
 ```json
-{"id":"i-know-that-my-redeemer-lives","book":"hymns","en":"136","es":"73","fr":"73","pt":"70"}
-{"id":"guide-us-o-thou-great-jehovah","book":"hymns","en":"83","es":"39","fr":"39","pt":"40",
+{"id":"i-know-that-my-redeemer-lives","book":"hymns","en":"136","es":"73","fr":"73","pt":"70","to":"68","sm":"73"}
+{"id":"guide-us-o-thou-great-jehovah","book":"hymns","en":"83","es":"39","fr":"39","pt":"40","to":"43","sm":"47",
  "pages":{"es":"guide-us-o-thou-great-jehovah-harrison"},"notes":{"es":"Different tune (HARRISON)."}}
-{"id":"behold-the-lamb-of-god","book":"hymns","en":null,"es":"59","fr":null,"pt":null}
+{"id":"behold-the-lamb-of-god","book":"hymns","en":null,"es":"59","fr":null,"pt":null,"to":null,"sm":"34"}
 ```
 
 | Field | Meaning |
 |---|---|
 | `id` | The Church's page id for the hymn. Also the last part of its Gospel Library URL |
 | `book` | `"hymns"` for the current hymnbooks, `"hymns-for-home-and-church"` for the new one |
-| `en`, `es`, `fr`, `pt` | The hymn's number in each language, or `null` |
+| `en`, `es`, `fr`, `pt`, `to`, `sm` | The hymn's number in each language, or `null` |
 | `pages` | *(Optional)* A different page id for a language whose version is published separately, usually because of a different tune or arrangement |
 | `notes` | *(Optional)* How that language's version differs |
 
-Hymns are matched by the Church's own page ids, which are the same in every language. In six hymns, one language's version is on a different page, usually because its tune or arrangement differs. Those were matched by comparing the text credits on each page, and they're listed in `LINKS` in [`scripts/sync.js`](scripts/sync.js).
+Hymns are matched by the Church's own page ids, which are the same in every language. In six hymns, a language's version is on a different page, usually because its tune or arrangement differs. Those were matched by comparing the text credits on each page, and they're listed in `LINKS` in [`scripts/sync.js`](scripts/sync.js).
 
 ## Using the data without JavaScript
 
@@ -145,10 +151,12 @@ https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/lang
 https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/es/himnos.json
 https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/fr/cantiques.json
 https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/pt/hinos.json
+https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/to/himi.json
+https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/sm/viiga.json
 https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/crosswalk.json
 ```
 
-To fetch the data from a web page, use the [jsDelivr](https://www.jsdelivr.com/) CDN instead. It's faster, cached worldwide and allows cross-origin requests. Replace `@main` with a release tag like `@v1.1.0` to pin a version:
+To fetch the data from a web page, use the [jsDelivr](https://www.jsdelivr.com/) CDN instead. It's faster, cached worldwide and allows cross-origin requests. Replace `@main` with a release tag like `@v1.2.0` to pin a version:
 
 ```
 https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@main/crosswalk.json
@@ -156,7 +164,7 @@ https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@main/languages/
 ```
 
 ```js
-const crosswalk = await fetch('https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@v1.1.0/crosswalk.json').then((r) => r.json());
+const crosswalk = await fetch('https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@v1.2.0/crosswalk.json').then((r) => r.json());
 ```
 
 For example, in Python:
@@ -189,7 +197,7 @@ mkdir -p /tmp/site && cp -R site/. languages crosswalk.json /tmp/site/ && python
 
 ## Keeping the data current
 
-All data files are generated by [`scripts/sync.js`](scripts/sync.js). It reads every hymnbook's contents and every hymn page from the Church's Gospel Library, about 1,400 pages, and takes a minute or so.
+All data files are generated by [`scripts/sync.js`](scripts/sync.js). It reads every hymnbook's contents and every hymn page from the Church's Gospel Library, about 1,900 pages, and takes about three minutes.
 
 ```bash
 npm run sync              # regenerate the data files
@@ -197,7 +205,7 @@ npm run sync -- --check   # just report whether anything changed
 npm test                  # validate the data and the API
 ```
 
-A [weekly GitHub Action](.github/workflows/check-for-new-hymns.yml) runs the sync and opens an issue when the Church publishes changes, such as a new batch of hymns.
+The sync is run by hand when the Church announces new hymns, not on a schedule, to keep load on the Church's site low. You can also run it from GitHub: Actions → [check for new hymns](.github/workflows/check-for-new-hymns.yml) → Run workflow opens an issue listing any changes.
 
 ## Contributing
 
@@ -206,7 +214,7 @@ Contributions are welcome, especially new languages.
 - **Found a wrong title or number?** Check it against [churchofjesuschrist.org](https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church) and [report it](https://github.com/voodoogumbo/lds-hymns-titles-numbers/issues/new?template=wrong-data.yml). The data is generated by the sync script, so fixes belong in the script, not in hand edits to the JSON.
 - **Adding a language:**
   - add it to `LANGUAGES` in [`scripts/sync.js`](scripts/sync.js), using the Gospel Library's three-letter code (e.g. `deu` for German);
-  - add it to [`index.js`](index.js), [`index.d.ts`](index.d.ts) and the `LANGS` list in [`site/index.html`](site/index.html);
+  - add it to [`index.js`](index.js), [`index.d.ts`](index.d.ts), the `exports` in [`package.json`](package.json), the `files` list in [`test/data.test.js`](test/data.test.js), the `LANGS` list in [`site/index.html`](site/index.html) and `FILES` in [`site/sw.js`](site/sw.js);
   - run `npm run sync` and `npm test`;
   - check whether any of its hymns need an entry in `LINKS`: sync lists the hymns it found in only one non-English hymnbook, and each is worth a second look.
 - Please run `npm test` before opening a pull request.

@@ -20,6 +20,8 @@ const LANGUAGES = {
   es: { api: 'spa', file: 'languages/es/himnos.json' },
   fr: { api: 'fra', file: 'languages/fr/cantiques.json' },
   pt: { api: 'por', file: 'languages/pt/hinos.json' },
+  to: { api: 'ton', file: 'languages/to/himi.json' },
+  sm: { api: 'smo', file: 'languages/sm/viiga.json' },
 };
 
 const BOOKS = {
@@ -44,6 +46,7 @@ const LINKS = [
   { lang: 'fr', page: 'when-faith-endures-mozart', to: 'when-faith-endures', note: 'Different tune (Mozart).' },
   { lang: 'fr', page: 'brightly-beams-our-fathers-mercy', to: 'brightly-beams-our-fathers-mercy-mens-choir', note: "Congregational arrangement (the English is for men's choir)." },
   { lang: 'pt', page: 'angry-words-o-let-them-never', to: 'angry-words-oh-let-them-never' },
+  { lang: 'to', page: 'angry-words-o-let-them-never', to: 'angry-words-oh-let-them-never' },
 ];
 
 const ENTITIES = { amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", nbsp: ' ' };
@@ -216,7 +219,11 @@ async function main() {
   console.error(changed.length ? `Updated: ${changed.join(', ')}` : 'Data is up to date.');
 }
 
-main().catch((err) => {
-  console.error(err.message);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err.message);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = { LANGUAGES, BOOKS, buildCrosswalk, serializeCrosswalk };

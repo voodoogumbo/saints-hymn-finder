@@ -4,7 +4,7 @@
 // Every request is answered from the cache when possible and refreshed in the
 // background, so new data shows up on the next visit.
 
-const CACHE = 'hymn-finder-v1';
+const CACHE = 'hymn-finder-v2';
 const FILES = [
   './',
   'manifest.webmanifest',
@@ -15,6 +15,8 @@ const FILES = [
   'languages/es/himnos.json',
   'languages/fr/cantiques.json',
   'languages/pt/hinos.json',
+  'languages/to/himi.json',
+  'languages/sm/viiga.json',
 ];
 
 self.addEventListener('install', (event) => {

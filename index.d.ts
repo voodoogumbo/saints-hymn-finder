@@ -1,4 +1,4 @@
-export type Language = 'en' | 'es' | 'fr' | 'pt';
+export type Language = 'en' | 'es' | 'fr' | 'pt' | 'to' | 'sm';
 
 export interface Hymn {
   /** The number as printed, e.g. "30", or "127a" for a lettered variant. */
@@ -20,6 +20,8 @@ export interface CrosswalkEntry {
   es: string | null;
   fr: string | null;
   pt: string | null;
+  to: string | null;
+  sm: string | null;
   /** Page id for a language whose version lives on a different page (another tune or arrangement). */
   pages?: Partial<Record<Language, string>>;
   /** How a language's version differs, e.g. "Different tune (HARRISON)." */

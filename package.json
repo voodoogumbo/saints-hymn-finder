@@ -1,7 +1,7 @@
 {
   "name": "lds-hymns-titles-numbers",
-  "version": "1.1.0",
-  "description": "Hymn numbers and titles from the hymnbooks of The Church of Jesus Christ of Latter-day Saints, by language",
+  "version": "1.2.0",
+  "description": "Hymn numbers and titles from the hymnbooks of The Church of Jesus Christ of Latter-day Saints in English, Spanish, French, Portuguese, Tongan and Samoan",
   "main": "index.js",
   "types": "index.d.ts",
   "exports": {
@@ -13,6 +13,8 @@
     "./es": "./languages/es/himnos.json",
     "./fr": "./languages/fr/cantiques.json",
     "./pt": "./languages/pt/hinos.json",
+    "./to": "./languages/to/himi.json",
+    "./sm": "./languages/sm/viiga.json",
     "./crosswalk": "./crosswalk.json",
     "./languages/*": "./languages/*",
     "./package.json": "./package.json"
@@ -43,7 +45,11 @@
     "music",
     "titles",
     "numbers",
-    "multilingual"
+    "multilingual",
+    "tongan",
+    "samoan",
+    "ngaahi himi",
+    "viiga"
   ],
   "author": "Will Grigoratos",
   "license": "MIT",

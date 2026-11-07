@@ -5,6 +5,8 @@ const hymns = {
   es: require('./languages/es/himnos.json'),
   fr: require('./languages/fr/cantiques.json'),
   pt: require('./languages/pt/hinos.json'),
+  to: require('./languages/to/himi.json'),
+  sm: require('./languages/sm/viiga.json'),
 };
 
 const crosswalk = require('./crosswalk.json');
@@ -16,6 +18,8 @@ const GOSPEL_LIBRARY = {
   es: 'spa',
   fr: 'fra',
   pt: 'por',
+  to: 'ton',
+  sm: 'smo',
 };
 
 const BOOK_PATHS = {
@@ -46,11 +50,12 @@ function table(lang) {
   return data;
 }
 
-// Lowercase and strip accents/punctuation so "senor" matches "Señor" and "tis" matches "'Tis".
+// Lowercase and strip accents/punctuation so "senor" matches "Señor", "tis" matches "'Tis" and "ofa" matches "ʻOfa".
 function normalize(text) {
   return text
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
+    .replace(/['ʻʼ‘’`]/g, '') // apostrophes and the ʻokina, so "faaola" matches "Fa'aola"
     .toLowerCase()
     .replace(/[^\p{L}\p{N}\s]/gu, ' ')
     .replace(/\s+/g, ' ')

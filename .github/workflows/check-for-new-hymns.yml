@@ -1,9 +1,8 @@
 name: check for new hymns
 
-# Weekly: compare the data with the Church's Gospel Library and open an issue if it's out of date.
+# Run by hand (Actions → check for new hymns → Run workflow) after the Church announces new hymns.
+# Compares the data with the Church's Gospel Library and opens an issue if it's out of date.
 on:
-  schedule:
-    - cron: '17 14 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -34,7 +33,7 @@ jobs:
             exit 0
           fi
           {
-            echo "The weekly check found changes on churchofjesuschrist.org. Run \`npm run sync\`, review the diff, and commit."
+            echo "The check found changes on churchofjesuschrist.org. Run \`npm run sync\`, review the diff, and commit."
             echo
             echo '```diff'
             git diff --unified=0 -- languages | grep '^[+-] ' | head -100
