@@ -1,0 +1,40 @@
+name: Wrong title or number
+description: A hymn's title or number doesn't match the Church's hymnbook.
+labels: [data]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for checking! Please compare against the hymn's page on [churchofjesuschrist.org](https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church) first.
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language
+      options: [English, Spanish, French, Portuguese]
+    validations:
+      required: true
+  - type: input
+    id: number
+    attributes:
+      label: Hymn number
+      placeholder: "136"
+    validations:
+      required: true
+  - type: input
+    id: shown
+    attributes:
+      label: What this project shows
+      placeholder: Title, number, or cross-language match
+    validations:
+      required: true
+  - type: input
+    id: correct
+    attributes:
+      label: What it should be
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Link to the hymn on churchofjesuschrist.org
+      placeholder: https://www.churchofjesuschrist.org/study/manual/hymns/...

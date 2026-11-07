@@ -1,0 +1,23 @@
+name: Add a language
+description: Ask for (or offer to add) another language's hymnbook.
+labels: [language]
+body:
+  - type: input
+    id: language
+    attributes:
+      label: Language
+      placeholder: German
+    validations:
+      required: true
+  - type: input
+    id: hymnbook
+    attributes:
+      label: Link to that language's hymnbook in Gospel Library
+      placeholder: https://www.churchofjesuschrist.org/study/manual/hymns?lang=deu
+  - type: checkboxes
+    id: help
+    attributes:
+      label: Can you help?
+      options:
+        - label: I can open a pull request (see "Adding a language" in the README)
+        - label: I can check the titles and numbers once they're added
