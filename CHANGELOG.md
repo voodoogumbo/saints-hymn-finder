@@ -2,6 +2,13 @@
 
 Data updates from the Church's Gospel Library are noted here when they change hymn numbers or titles.
 
+## 2.0.0 — 2026-11-07
+
+- **Renamed to Saints Hymn Finder.** The repository, npm package and website are now `saints-hymn-finder`:
+  - `require('lds-hymns-titles-numbers')` becomes `require('saints-hymn-finder')`;
+  - the website moved to https://voodoogumbo.github.io/saints-hymn-finder/, and the old address redirects there.
+- No changes to the data or the API.
+
 ## 1.2.0 — 2026-11-07
 
 - **Tongan (`to`) and Samoan (`sm`):** *Ngaahi Himi* (1–204) and *Viiga* (1–201), plus the 37 hymns from *Hymns—For Home and Church* translated so far. Both languages are in the crosswalk, the API and the Hymn Number Finder.

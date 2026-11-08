@@ -1,6 +1,6 @@
 {
-  "name": "lds-hymns-titles-numbers",
-  "version": "1.2.0",
+  "name": "saints-hymn-finder",
+  "version": "2.0.0",
   "description": "Hymn numbers and titles from the hymnbooks of The Church of Jesus Christ of Latter-day Saints in English, Spanish, French, Portuguese, Tongan and Samoan",
   "main": "index.js",
   "types": "index.d.ts",
@@ -31,7 +31,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/voodoogumbo/lds-hymns-titles-numbers.git"
+    "url": "git+https://github.com/voodoogumbo/saints-hymn-finder.git"
   },
   "keywords": [
     "lds",
@@ -54,9 +54,9 @@
   "author": "Will Grigoratos",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/voodoogumbo/lds-hymns-titles-numbers/issues"
+    "url": "https://github.com/voodoogumbo/saints-hymn-finder/issues"
   },
-  "homepage": "https://github.com/voodoogumbo/lds-hymns-titles-numbers#readme",
+  "homepage": "https://voodoogumbo.github.io/saints-hymn-finder/",
   "engines": {
     "node": ">=18"
   }

@@ -74,7 +74,7 @@ async function getPage(lang, uri) {
   const url = `${API}?lang=${lang}&uri=${encodeURIComponent(uri)}`;
   for (let attempt = 1; ; attempt++) {
     try {
-      const res = await fetch(url, { headers: { 'User-Agent': 'lds-hymns-titles-numbers sync' } });
+      const res = await fetch(url, { headers: { 'User-Agent': 'saints-hymn-finder sync' } });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       return (await res.json()).content.body;
     } catch (err) {

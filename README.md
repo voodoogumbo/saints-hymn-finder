@@ -1,18 +1,18 @@
-# LDS Hymns: Titles and Numbers
+# Saints Hymn Finder
 
-[![test](https://github.com/voodoogumbo/lds-hymns-titles-numbers/actions/workflows/test.yml/badge.svg)](https://github.com/voodoogumbo/lds-hymns-titles-numbers/actions/workflows/test.yml)
+[![test](https://github.com/voodoogumbo/saints-hymn-finder/actions/workflows/test.yml/badge.svg)](https://github.com/voodoogumbo/saints-hymn-finder/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 Every hymn number and title from the hymnbooks of The Church of Jesus Christ of Latter-day Saints, in **English, Spanish, French, Portuguese, Tongan and Samoan**, plus a **cross-reference** that tells you what number a hymn is in each language.
 
 Plain JSON you can use from any language, and a tiny zero-dependency JavaScript API.
 
-**🔎 Just need a number? Use the [Hymn Number Finder](https://voodoogumbo.github.io/lds-hymns-titles-numbers/).** Type a number or title and see the hymn in all six languages. Each title links to its official page with lyrics, sheet music and recordings. It works on phones, can be added to the home screen, and keeps working offline.
+**🔎 Just need a number? Use the [Saints Hymn Finder](https://voodoogumbo.github.io/saints-hymn-finder/).** Type a number or title and see the hymn in all six languages. Each title links to its official page with lyrics, sheet music and recordings. It works on phones, can be added to the home screen, and keeps working offline.
 
-<a href="https://voodoogumbo.github.io/lds-hymns-titles-numbers/#redeemer%20lives">
+<a href="https://voodoogumbo.github.io/saints-hymn-finder/#redeemer%20lives">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/screenshots/finder-dark.png">
-    <img src=".github/screenshots/finder-light.png" width="600" alt="The Hymn Number Finder showing a search for &quot;redeemer lives&quot;: hymn 136 is 73 in Spanish, 73 in French, 70 in Portuguese, 68 in Tongan and 73 in Samoan.">
+    <img src=".github/screenshots/finder-light.png" width="600" alt="The Saints Hymn Finder showing a search for &quot;redeemer lives&quot;: hymn 136 is 73 in Spanish, 73 in French, 70 in Portuguese, 68 in Tongan and 73 in Samoan.">
   </picture>
 </a>
 
@@ -35,11 +35,11 @@ So if you're printing a bilingual program, leading music in a multilingual ward,
 ## Quick start
 
 ```bash
-npm install github:voodoogumbo/lds-hymns-titles-numbers
+npm install github:voodoogumbo/saints-hymn-finder
 ```
 
 ```js
-const { getHymn, translate, search, url } = require('lds-hymns-titles-numbers');
+const { getHymn, translate, search, url } = require('saints-hymn-finder');
 
 getHymn(136);
 // { id: '136', number: 136, title: 'I Know That My Redeemer Lives' }
@@ -100,7 +100,7 @@ Tongan and Samoan have fewer hymns from *Hymns—For Home and Church* so far, be
 
 Hymns are returned as `{ id, number, title }`. `id` is the number as printed (`'127a'`). `number` is its numeric part (`127`). TypeScript types are included.
 
-You can also import a single data file: `require('lds-hymns-titles-numbers/es')`, `/en`, `/fr`, `/pt`, `/to`, `/sm` or `/crosswalk`.
+You can also import a single data file: `require('saints-hymn-finder/es')`, `/en`, `/fr`, `/pt`, `/to`, `/sm` or `/crosswalk`.
 
 ## Data format
 
@@ -147,24 +147,24 @@ Hymns are matched by the Church's own page ids, which are the same in every lang
 Every file is available at a permanent URL:
 
 ```
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/en/hymns.json
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/es/himnos.json
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/fr/cantiques.json
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/pt/hinos.json
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/to/himi.json
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/languages/sm/viiga.json
-https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/crosswalk.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/languages/en/hymns.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/languages/es/himnos.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/languages/fr/cantiques.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/languages/pt/hinos.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/languages/to/himi.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/languages/sm/viiga.json
+https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/crosswalk.json
 ```
 
-To fetch the data from a web page, use the [jsDelivr](https://www.jsdelivr.com/) CDN instead. It's faster, cached worldwide and allows cross-origin requests. Replace `@main` with a release tag like `@v1.2.0` to pin a version:
+To fetch the data from a web page, use the [jsDelivr](https://www.jsdelivr.com/) CDN instead. It's faster, cached worldwide and allows cross-origin requests. Replace `@main` with a release tag like `@v2.0.0` to pin a version:
 
 ```
-https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@main/crosswalk.json
-https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@main/languages/es/himnos.json
+https://cdn.jsdelivr.net/gh/voodoogumbo/saints-hymn-finder@main/crosswalk.json
+https://cdn.jsdelivr.net/gh/voodoogumbo/saints-hymn-finder@main/languages/es/himnos.json
 ```
 
 ```js
-const crosswalk = await fetch('https://cdn.jsdelivr.net/gh/voodoogumbo/lds-hymns-titles-numbers@v1.2.0/crosswalk.json').then((r) => r.json());
+const crosswalk = await fetch('https://cdn.jsdelivr.net/gh/voodoogumbo/saints-hymn-finder@v2.0.0/crosswalk.json').then((r) => r.json());
 ```
 
 For example, in Python:
@@ -172,7 +172,7 @@ For example, in Python:
 ```python
 import json, urllib.request
 
-BASE = "https://raw.githubusercontent.com/voodoogumbo/lds-hymns-titles-numbers/main/"
+BASE = "https://raw.githubusercontent.com/voodoogumbo/saints-hymn-finder/main/"
 load = lambda path: json.load(urllib.request.urlopen(BASE + path))
 
 english, spanish = load("languages/en/hymns.json"), load("languages/es/himnos.json")
@@ -185,7 +185,7 @@ print(english[entry["en"]], "→", entry["es"], spanish[entry["es"]])
 
 ## Website
 
-[`site/index.html`](site/index.html) is the [Hymn Number Finder](https://voodoogumbo.github.io/lds-hymns-titles-numbers/). It's a single static page with no build step. A [workflow](.github/workflows/pages.yml) publishes it to GitHub Pages, along with the data files, on every push to `main`. Searches are kept in the URL, so a lookup can be shared, e.g. [`#136`](https://voodoogumbo.github.io/lds-hymns-titles-numbers/#136). It's an installable web app: a small [service worker](site/sw.js) caches the page and data, so it keeps working offline after the first visit.
+[`site/index.html`](site/index.html) is the [Saints Hymn Finder](https://voodoogumbo.github.io/saints-hymn-finder/). It's a single static page with no build step. A [workflow](.github/workflows/pages.yml) publishes it to GitHub Pages, along with the data files, on every push to `main`. Searches are kept in the URL, so a lookup can be shared, e.g. [`#136`](https://voodoogumbo.github.io/saints-hymn-finder/#136). It's an installable web app: a small [service worker](site/sw.js) caches the page and data, so it keeps working offline after the first visit.
 
 The site links to the Church's own pages and doesn't copy lyrics, sheet music or recordings. Those stay on churchofjesuschrist.org (and open in the Gospel Library app on phones that have it).
 
@@ -211,7 +211,7 @@ The sync is run by hand when the Church announces new hymns, not on a schedule, 
 
 Contributions are welcome, especially new languages.
 
-- **Found a wrong title or number?** Check it against [churchofjesuschrist.org](https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church) and [report it](https://github.com/voodoogumbo/lds-hymns-titles-numbers/issues/new?template=wrong-data.yml). The data is generated by the sync script, so fixes belong in the script, not in hand edits to the JSON.
+- **Found a wrong title or number?** Check it against [churchofjesuschrist.org](https://www.churchofjesuschrist.org/media/music/collections/hymns-for-home-and-church) and [report it](https://github.com/voodoogumbo/saints-hymn-finder/issues/new?template=wrong-data.yml). The data is generated by the sync script, so fixes belong in the script, not in hand edits to the JSON.
 - **Adding a language:**
   - add it to `LANGUAGES` in [`scripts/sync.js`](scripts/sync.js), using the Gospel Library's three-letter code (e.g. `deu` for German);
   - add it to [`index.js`](index.js), [`index.d.ts`](index.d.ts), the `exports` in [`package.json`](package.json), the `files` list in [`test/data.test.js`](test/data.test.js), the `LANGS` list in [`site/index.html`](site/index.html) and `FILES` in [`site/sw.js`](site/sw.js);
